@@ -1,5 +1,3 @@
-## I'm working on macos delta updates. It's going to come soon. Help required!
-
 # @electron-delta/builder
 
 True delta updates for electronjs apps. It reduces the bandwidth usage by 90%. Users download only the delta. It uses binary diffing (`HDiffPatch` library) to generate the delta.
@@ -59,17 +57,17 @@ const options = {
   getPreviousReleases: async () => {
     return [
       {
-        version: '0.0.12',
-        url: 'https://github.com/electron-delta/electron-sample-app/releases/download/v0.0.12/electron-sample-app-0.0.12.exe'
+        version: "0.0.12",
+        url: "https://github.com/electron-delta/electron-sample-app/releases/download/v0.0.12/electron-sample-app-0.0.12.exe",
       },
       {
-        version: '0.0.11',
-        url: 'https://github.com/electron-delta/electron-sample-app/releases/download/v0.0.11/electron-sample-app-0.0.11.exe'
+        version: "0.0.11",
+        url: "https://github.com/electron-delta/electron-sample-app/releases/download/v0.0.11/electron-sample-app-0.0.11.exe",
       },
       {
-        version: '0.0.9',
-        url: 'https://github.com/electron-delta/electron-sample-app/releases/download/v0.0.9/electron-sample-app-0.0.9.exe'
-      }
+        version: "0.0.9",
+        url: "https://github.com/electron-delta/electron-sample-app/releases/download/v0.0.9/electron-sample-app-0.0.9.exe",
+      },
     ];
   },
   sign: async (filePath) => {
@@ -87,10 +85,11 @@ exports.default = async function (context) {
 ```
 
 ## `options`
-  - `productIconPath`: (required) Path to the icon file. The icon file must be a .ico file.
-  - `productName`: (required) Name of the product.
-  - `getPreviousReleases`: (required) Function to get the previous releases. It must return an array of objects. Each object must have `version` and `url` properties.
-  - `sign`: (required) Function to sign the delta executable.
-  - `cache`: (optional) Path to the cache directory. If not specified, the default cache directory will be used. The default cache directory is `~/.electron-delta/`.
-  - `processName`: (optional) Name of the process. If different from the product name.
-  - `latestVersion`: (optional) Latest version of the product. If not specified, the latest version will be fetched `process.env.npm_package_version`.
+
+- `productIconPath`: (required) Path to the icon file. The icon file must be a .ico file.
+- `productName`: (required) Name of the product.
+- `getPreviousReleases`: (required) Function to get the previous releases. It must return an array of objects. Each object must have `version` and `url` properties.
+- `sign`: (required) Function to sign the delta executable.
+- `cache`: (optional) Path to the cache directory. If not specified, the default cache directory will be used. The default cache directory is `~/.electron-delta/`.
+- `processName`: (optional) Name of the process. If different from the product name.
+- `latestVersion`: (optional) Latest version of the product. If not specified, the latest version will be fetched `process.env.npm_package_version`.
